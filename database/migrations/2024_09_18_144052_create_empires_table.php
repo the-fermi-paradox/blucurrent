@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('focus');
             $table->string('unique_units');
             $table->string('unique_technologies');
-            $table->string('unique_buildings');
+            $table->string('unique_buildings')->nullable();
             $table->timestamps();
         });
     }
