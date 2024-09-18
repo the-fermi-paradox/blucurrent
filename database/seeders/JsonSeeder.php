@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
 
-class JsonSeeder extends Seeder
+abstract class JsonSeeder extends Seeder
 {
     protected string $filePath;
     protected string $modelClass;
