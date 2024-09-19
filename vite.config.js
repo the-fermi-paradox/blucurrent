@@ -8,4 +8,10 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    resolve: {
+        alias: {
+            // Example alias to include a package from node_modules
+            '~mdb': '/node_modules/mdbootstrap/',
+        },
+    }
 });
