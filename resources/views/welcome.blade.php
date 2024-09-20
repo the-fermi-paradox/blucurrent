@@ -22,22 +22,37 @@
     <div class="mask d-flex align-items-center h-100">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-18">
+                <div class="col-xxl-12">
                     <div class="table-responsive">
                         <table class="table table-dark table-bordered mb-0">
                             <thead>
                             <tr>
-                                @foreach($empires->first()->attributesToArray() as $key => $value)
-                                <th scope="col">{{ $key }}</th>
-                                @endforeach
+                                <th scope="col">Actions</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Release</th>
+                                <th scope="col">Architecture</th>
+                                <th scope="col">Continent</th>
+                                <th scope="col">Focus</th>
+                                <th scope="col">Unique Units</th>
+                                <th scope="col">Unique Technologies</th>
+                                <th scope="col">Unique Buildings</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($empires as $empire)
                                 <tr>
-                                    @foreach($empire->attributesToArray() as $key => $value)
-                                    <td>{{ $value }}</td>
-                                    @endforeach
+                                    <td>
+                                        <a href="/update/{{$empire->id}}"><i class="fas fa-fw fa-lg fa-pen-to-square"></i></a>
+                                        <a href="/api/releases"><i class="fas fa-fw fa-lg fa-trash-can"></i></a>
+                                    </td>
+                                    <td>{{ $empire->name }}</td>
+                                    <td>{{ $empire->release?->name }}</td>
+                                    <td>{{ $empire->architecture }}</td>
+                                    <td>{{ $empire->continent }}</td>
+                                    <td>{{ $empire->focus }}</td>
+                                    <td>{{ $empire->unique_units }}</td>
+                                    <td>{{ $empire->unique_technologies }}</td>
+                                    <td>{{ $empire->unique_buildings ?? "N/A" }}</td>
                                 </tr>
                             @endforeach
                             </tbody>

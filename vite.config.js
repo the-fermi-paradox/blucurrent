@@ -11,7 +11,7 @@ export default defineConfig({
     resolve: {
         alias: {
             // Example alias to include a package from node_modules
-            '~mdb': '/node_modules/mdbootstrap/',
+            '~mdb': '/node_modules/mdb-ui-kit/',
         },
     }
 });

@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Models\Empire;
+use App\Models\Release;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,10 @@ class EmpireController extends Controller
      */
     public function index() : View
     {
-        $empires = Empire::paginate(8);
+        $empires = Empire::with('release')?->paginate(8);
+        if (sizeof($empires) <= 0) {
+            return view('errors::404');
+        }
         return view('welcome', ['empires' => $empires]);
     }
 
@@ -46,7 +50,9 @@ class EmpireController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $empire = Empire::with('release')?->findOrFail($id);
+        $releases = Release::all();
+        return view('empire.update', ['empire'=>$empire, 'releases'=>$releases]);
     }
 
     /**

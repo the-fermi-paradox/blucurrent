@@ -1,6 +1,9 @@
-@import '~mdb/css/bootstrap.min.css';
 @import '~mdb/css/mdb.min.css';
 
+* {
+    --top-gradient: rgba(50, 50, 50, 1);
+    --bot-gradient: rgba(0, 0, 0, 1);
+}
 html,
 body,
 .intro {
@@ -12,10 +15,10 @@ body,
     background: #6a11cb;
 
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to top, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    background: -webkit-linear-gradient(to top, var(--top-gradient), var(--bot-gradient));
 
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to top, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    background: linear-gradient(to top, var(--top-gradient), var(--bot-gradient))
 }
 
 table td,
@@ -33,4 +36,16 @@ tbody th {
 tbody td {
     font-weight: 500;
     color: rgba(255,255,255,.65);
+}
+
+table.table a {
+    color: #ffffffa6;
+}
+
+table.table a:hover {
+    color: #ffffffff;
+}
+
+.dropdown-item:hover {
+    cursor: pointer;
 }
