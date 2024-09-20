@@ -5,16 +5,20 @@ import {initMDB, Input, Dropdown, Ripple } from 'mdb-ui-kit';
 initMDB({ Input, Dropdown, Ripple });
 export const dropdownMenuSet = (pick) =>{
     const menuButton = $('#dropdownMenuButton');
+    const releaseInput = $('#release_id');
     if (pick.innerHTML !== ""){
         menuButton.val(pick.innerHTML);
         menuButton.html(pick.innerHTML);
-        menuButton.attr('data-id', $(pick).data('id'));
+        console.log(releaseInput);
+        releaseInput.css('display', 'block');
+        releaseInput.val(pick.dataset.id);
     }
     else {
         menuButton.val('');
         menuButton.html('Releases');
-        menuButton.attr('data-id', '0');
+        releaseInput.val(1);
     }
+    releaseInput.css('display', 'none');
 }
 window.dropdownMenuSet = dropdownMenuSet;
 (() => {

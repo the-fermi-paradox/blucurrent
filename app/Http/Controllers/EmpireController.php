@@ -2,10 +2,14 @@
 declare(strict_types=1);
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateEmpireRequest;
 use App\Models\Empire;
 use App\Models\Release;
 use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 
 class EmpireController extends Controller
 {
@@ -50,7 +54,7 @@ class EmpireController extends Controller
      */
     public function edit(string $id)
     {
-        $empire = Empire::with('release')?->findOrFail($id);
+        $empire = Empire::with('release')->findOrFail($id);
         $releases = Release::all();
         return view('empire.update', ['empire'=>$empire, 'releases'=>$releases]);
     }
@@ -58,9 +62,11 @@ class EmpireController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateEmpireRequest $request, string $id) : Application|Redirector|RedirectResponse
     {
-        //
+        $empire = Empire::findOrFail($id);
+        $empire->update($request->validated());
+        return redirect('/');
     }
 
     /**
