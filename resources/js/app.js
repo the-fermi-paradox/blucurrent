@@ -1,16 +1,15 @@
 import './bootstrap';
 import $ from 'jquery'
 import * as mdb from 'mdb-ui-kit'
-import {initMDB, Input, Dropdown, Ripple } from 'mdb-ui-kit';
-initMDB({ Input, Dropdown, Ripple });
+import { initMDB, Modal, Input, Dropdown, Ripple } from 'mdb-ui-kit';
+initMDB({ Modal, Input, Dropdown, Ripple });
 export const dropdownMenuSet = (pick) =>{
     const menuButton = $('#dropdownMenuButton');
     const releaseInput = $('#release_id');
+    releaseInput.css('display', 'block');
     if (pick.innerHTML !== ""){
         menuButton.val(pick.innerHTML);
         menuButton.html(pick.innerHTML);
-        console.log(releaseInput);
-        releaseInput.css('display', 'block');
         releaseInput.val(pick.dataset.id);
     }
     else {
@@ -34,3 +33,7 @@ window.dropdownMenuSet = dropdownMenuSet;
         }, false);
     });
 })();
+
+export const deleteEntry = (self) => {
+   fetch();
+}

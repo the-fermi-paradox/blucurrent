@@ -1,24 +1,10 @@
 @import '~mdb/css/mdb.min.css';
 
-* {
-    --top-gradient: rgba(50, 50, 50, 1);
-    --bot-gradient: rgba(0, 0, 0, 1);
-}
 html,
 body,
 .intro {
     height: 100%;
-}
-
-.gradient-custom-2 {
-    /* fallback for old browsers */
-    background: #6a11cb;
-
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to top, var(--top-gradient), var(--bot-gradient));
-
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to top, var(--top-gradient), var(--bot-gradient))
+    background-color: rgb(0, 38, 63);
 }
 
 table td,
@@ -28,24 +14,28 @@ table th {
     overflow: hidden;
 }
 
-thead th,
-tbody th {
-    color: #fff;
-}
-
 tbody td {
     font-weight: 500;
     color: rgba(255,255,255,.65);
 }
 
-table.table a {
-    color: #ffffffa6;
+.dropdown-item:hover {
+    cursor: pointer;
+}
+
+.fake-button {
+    all: unset;
+    cursor: pointer;
 }
 
 table.table a:hover {
-    color: #ffffffff;
+    color: #1a202c;
 }
 
-.dropdown-item:hover {
-    cursor: pointer;
+.fake-button:hover {
+    color: #1a202c;
+}
+
+form, input, label, p {
+    color: white !important;
 }

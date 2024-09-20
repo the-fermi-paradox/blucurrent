@@ -2,7 +2,7 @@
 declare(strict_types=1);
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UpdateEmpireRequest;
+use App\Http\Requests\EmpireRequest;
 use App\Models\Empire;
 use App\Models\Release;
 use Illuminate\Contracts\View\View;
@@ -19,10 +19,7 @@ class EmpireController extends Controller
     public function index() : View
     {
         $empires = Empire::with('release')?->paginate(8);
-        if (sizeof($empires) <= 0) {
-            return view('errors::404');
-        }
-        return view('welcome', ['empires' => $empires]);
+        return view('empire.list', ['empires' => $empires]);
     }
 
     /**
@@ -30,15 +27,17 @@ class EmpireController extends Controller
      */
     public function create()
     {
-        //
+        $releases = Release::all();
+        return view('empire.create', ['releases' => $releases]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(EmpireRequest $request)
     {
-        //
+        Empire::create($request->validated());
+        return redirect('/');
     }
 
     /**
@@ -62,11 +61,12 @@ class EmpireController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateEmpireRequest $request, string $id) : Application|Redirector|RedirectResponse
+    public function update(EmpireRequest $request, string $id) : Application|Redirector|RedirectResponse
     {
         $empire = Empire::findOrFail($id);
         $empire->update($request->validated());
-        return redirect('/');
+        $val = (int) ((int) $id / 8) + 1;
+        return redirect("/?page={$val}");
     }
 
     /**
@@ -74,6 +74,8 @@ class EmpireController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $empire = Empire::findOrFail($id);
+        $empire->delete();
+        return redirect("/?page=1");
     }
 }
