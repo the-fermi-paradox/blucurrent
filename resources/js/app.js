@@ -1,6 +1,5 @@
 import './bootstrap';
 import $ from 'jquery'
-import * as mdb from 'mdb-ui-kit'
 import { initMDB, Modal, Input, Dropdown, Ripple } from 'mdb-ui-kit';
 initMDB({ Modal, Input, Dropdown, Ripple });
 export const dropdownMenuSet = (pick) =>{
@@ -33,7 +32,3 @@ window.dropdownMenuSet = dropdownMenuSet;
         }, false);
     });
 })();
-
-export const deleteEntry = (self) => {
-   fetch();
-}

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Release extends Model
 {
+    protected $hidden = ['updated_at', 'created_at'];
     public function empires() : HasMany {
         return $this->hasMany(Empire::class);
     }
