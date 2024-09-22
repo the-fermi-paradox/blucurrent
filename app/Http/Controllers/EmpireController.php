@@ -13,10 +13,10 @@ class EmpireController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(?string $col = 'id') : View
+    public function index(?string $col = 'id', ?string $order = 'asc') : View
     {
-        $empires = Empire::with('release')->orderBy($col)->paginate(8);
-        return view('empire.list', ['empires' => $empires]);
+        $empires = Empire::with('release')->orderBy($col, $order)->paginate(8);
+        return view('empire.list', ['empires' => $empires, 'col' => $col, 'order' => $order]);
     }
 
     /**

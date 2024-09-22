@@ -49,14 +49,14 @@
                             <thead>
                             <tr>
                                 <th scope="col">Actions</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Release</th>
-                                <th scope="col">Architecture</th>
-                                <th scope="col">Continent</th>
-                                <th scope="col">Focus</th>
-                                <th scope="col">Unique Units</th>
-                                <th scope="col">Unique Technologies</th>
-                                <th scope="col">Unique Buildings</th>
+                                <x-headcell :$col :$order cmp="name">Name</x-headcell>
+                                <x-headcell :$col :$order cmp="release_id">Release</x-headcell>
+                                <x-headcell :$col :$order cmp="architecture">Architecture</x-headcell>
+                                <x-headcell :$col :$order cmp="continent">Continent</x-headcell>
+                                <x-headcell :$col :$order cmp="focus">Focus</x-headcell>
+                                <x-headcell :$col :$order cmp="unique_units">Unique Units</x-headcell>
+                                <x-headcell :$col :$order cmp="unique_technologies">Unique Technologies</x-headcell>
+                                <x-headcell :$col :$order cmp="unique_buildings">Unique Buildings</x-headcell>
                             </tr>
                             </thead>
                             <tbody>
