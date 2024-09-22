@@ -31,16 +31,5 @@ services:
             - "443:443"
         depends_on:
             - database
-
-    # Node
-    node:
-        container_name: node
-        build:
-            context: .
-            target: node
-        volumes:
-            - .:/usr/src
-            - ./node_modules:/usr/src/node_modules
-        tty: true
 volumes:
     db-data: ~
