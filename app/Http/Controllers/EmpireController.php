@@ -54,8 +54,7 @@ class EmpireController extends Controller
     {
         $empire = Empire::findOrFail($id);
         $empire->update($request->validated());
-        $val = (int) ((int) $id / 8) + 1;
-        return redirect("/?page={$val}");
+        return redirect("/?page={$request->query('page', 1)}");
     }
 
     /**
