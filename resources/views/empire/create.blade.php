@@ -51,13 +51,13 @@
                                 data-mdb-dropdown-init
                                 data-mdb-ripple-init
                                 aria-expanded="false"
-                                data-id="{{$releases->first()?->id}}"
+                                data-id="{{ $releases->first()?->id }}"
                             >
-                                {{$releases->first()?->name}}
+                                {{ $releases->first()?->name }}
                             </button>
                             <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
                                 @foreach($releases as $release)
-                                    <li class="dropdown-item w-100" data-id="{{$release->id}}" onclick="dropdownMenuSet(this)">{{$release->name}}</li>
+                                    <li class="dropdown-item w-100" data-id="{{ $release->id }}" onclick="dropdownMenuSet(this)">{{ $release->name }}</li>
                                 @endforeach
                             </ul>
                         </div>
@@ -122,7 +122,7 @@
                         </div>
                     </div>
                 </div>
-                <input type="text" id="release_id" name="release_id" class="d-none" value="{{$releases->first()?->id}}" required/>
+                <input type="text" id="release_id" name="release_id" class="d-none" value="{{ $releases->first()?->id }}" required/>
                 <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
                 <a href="/" data-mdb-ripple-init type="button" class="btn btn-secondary btn-block mb-4">Cancel</a>
             </form>

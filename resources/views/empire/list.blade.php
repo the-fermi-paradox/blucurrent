@@ -22,17 +22,17 @@
     <div class="mask d-flex align-items-center h-100">
         <div class="container">
             @foreach($empires as $empire)
-            <div class="modal fade" id="modal-{{$empire->id}}" tabindex="-1" aria-labelledby="modal-label-{{$empire->id}}" aria-hidden="true">
+            <div class="modal fade" id="modal-{{ $empire->id }}" tabindex="-1" aria-labelledby="modal-label-{{ $empire->id }}" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="modal-label-{{$empire->id}}">Delete {{$empire->name}}</h5>
+                            <h5 class="modal-title" id="modal-label-{{ $empire->id }}">Delete {{ $empire->name }}</h5>
                             <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">Are you certain you want to delete {{$empire->name}}?</div>
+                        <div class="modal-body">Are you certain you want to delete {{ $empire->name }}?</div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Close</button>
-                            <form action="/empire/delete/{{$empire->id}}" method="post">
+                            <form action="/empire/delete/{{ $empire->id }}" method="post">
                                 @csrf
                                 @method('DELETE');
                                 <button type="submit" class="btn btn-primary" data-mdb-ripple-init>Delete</button>
@@ -63,8 +63,8 @@
                             @foreach($empires as $empire)
                                 <tr>
                                     <td>
-                                        <a href="/empire/update/{{$empire->id}}"><i class="fas fa-fw fa-lg fa-pen-to-square"></i></a>
-                                        <button class="fake-button" type="button" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#modal-{{$empire->id}}"><i class="fas fa-fw fa-lg fa-trash-can"></i></button>
+                                        <a href="/empire/update/{{ $empire->id }}"><i class="fas fa-fw fa-lg fa-pen-to-square"></i></a>
+                                        <button class="fake-button" type="button" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#modal-{{ $empire->id }}"><i class="fas fa-fw fa-lg fa-trash-can"></i></button>
                                     </td>
                                     <td>{{ $empire->name }}</td>
                                     <td>{{ $empire->release?->name }}</td>
