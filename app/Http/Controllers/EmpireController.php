@@ -34,7 +34,7 @@ class EmpireController extends Controller
     public function store(EmpireRequest $request) : RedirectResponse
     {
         Empire::create($request->validated());
-        return redirect('/');
+        return redirect()->route('empire.list');
     }
 
     /**
@@ -54,7 +54,7 @@ class EmpireController extends Controller
     {
         $empire = Empire::findOrFail($id);
         $empire->update($request->validated());
-        return redirect("/?page={$request->query('page', 1)}");
+        return redirect()->route('empire.list');
     }
 
     /**
@@ -63,6 +63,6 @@ class EmpireController extends Controller
     public function destroy(string $id) : RedirectResponse
     {
         Empire::destroy($id);
-        return redirect("/?page=1");
+        return redirect()->route('empire.list');
     }
 }
