@@ -19,8 +19,6 @@ fi
 php artisan key:generate
 php artisan migrate:fresh --seed --force
 php artisan optimize
-php artisan view:cache
-php artisan config:cache
 
 npm run build
 
