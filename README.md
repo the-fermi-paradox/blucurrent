@@ -5,12 +5,12 @@ To deploy the project to production, follow these steps on a Debian-based Linux 
 1. `sudo apt install git docker docker-compose`
 2. `git clone https://github.com/the-fermi-paradox/blucurrent.git`
 3. `cd blucurrent`
-4. download data files (releases.json, empires.json) into `/storage/app/private/`
-5. copy .env.example to .env (or use your own)
+4. download data files `releases.json, empires.json` into `/storage/app/private/`
+5. supply `.env` file; otherwise script will copy `.env.example`
 6. `docker-compose up --build -d`
 
 ### Features
-#### View Routes
+#### Web Routes
 - `GET "/" `: renders a Blade template with all available empires
 - `GET "/{col?}"` : renders a Blade template with all empires sorted by `col`
 - `DELETE "/empire/delete/{id}"` : deletes the empire at the id
