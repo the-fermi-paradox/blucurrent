@@ -5,7 +5,7 @@ use App\Models\Release;
 
 class ReleaseSeeder extends JsonSeeder
 {
-    protected string $filePath = 'data/releases.json';
+    protected string $filePath = 'releases.json';
     protected string $modelClass = Release::class;
     protected string $objectName = 'releases';
 }

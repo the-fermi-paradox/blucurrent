@@ -6,7 +6,7 @@ To deploy the project to production, follow these steps on a Debian-based Linux 
 2. `git clone https://github.com/the-fermi-paradox/blucurrent.git`
 3. `cd blucurrent`
 4. download data files (releases.json, empires.json) into `/storage/app/private/data`
-5. create `.env` file in project, be sure to use port 3306 for MySQL
+5. copy .env.example to .env (or use your own)
 6. `docker-compose up --build -d`
 
 ### Features
