@@ -15,8 +15,6 @@ WORKDIR /var/www
 
 COPY . .
 
-RUN touch database/database.sqlite
-
 RUN npm install --global cross-env
 RUN npm install
 

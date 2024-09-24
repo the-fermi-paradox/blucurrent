@@ -11,6 +11,8 @@ else
     echo "env file exists."
 fi
 
+touch database/database.sqlite
+
 php artisan key:generate
 php artisan migrate:fresh --seed --force
 php artisan optimize clear
