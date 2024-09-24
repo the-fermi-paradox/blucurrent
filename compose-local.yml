@@ -1,0 +1,10 @@
+# Run me in development!
+services:
+  php:
+    container_name: php
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+      target: php
+    working_dir: /var/www
+    ports: [ "8000:8000" ]
