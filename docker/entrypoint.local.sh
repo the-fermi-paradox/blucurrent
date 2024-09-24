@@ -11,13 +11,13 @@ else
     echo "env file exists."
 fi
 
+npm install
+
 touch database/database.sqlite
 
 php artisan key:generate
 php artisan migrate:fresh --seed --force
-php artisan optimize clear
-php artisan view:clear
-php artisan route:clear
+php artisan optimize:clear
 
 npm run build
 php artisan serve --host 0.0.0.0

@@ -10,6 +10,11 @@ use Illuminate\Http\RedirectResponse;
 
 class EmpireController extends Controller
 {
+    public function welcome() : RedirectResponse
+    {
+        return redirect()->route('empire.list');
+    }
+
     /**
      * Display a listing of the resource.
      */

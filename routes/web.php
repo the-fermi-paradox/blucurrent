@@ -3,11 +3,15 @@ declare(strict_types=1);
 use App\Http\Controllers\EmpireController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/empire/create/', [EmpireController::class, 'create'])->name('empire.create');
-Route::post('/empire/create/', [EmpireController::class, 'store'])->name('empire.store');
-Route::delete('/empire/delete/{id}', [EmpireController::class, 'destroy'])->name('empire.delete');
+Route::controller(EmpireController::class)->group(function() {
+    Route::get('/', 'welcome')->name('welcome');
+    Route::get('/empire/', 'index')->name('empire.list');
+    Route::get('/empire/sort/{col?}/{order?}', 'index')->name('empire.sort');
 
-Route::put('/empire/update/{id}', [EmpireController::class, 'update'])->name('empire.update');
-Route::get('/empire/update/{id}', [EmpireController::class, 'edit'])->name('empire.edit');
+    Route::get('/empire/create/', 'create')->name('empire.create');
+    Route::post('/empire/create/', 'store')->name('empire.store');
+    Route::delete('/empire/delete/{id}', 'destroy')->name('empire.delete');
 
-Route::get('/{col?}/{order?}', [EmpireController::class, 'index'])->name('empire.list');
+    Route::put('/empire/update/{id}', 'update')->name('empire.update');
+    Route::get('/empire/update/{id}', 'edit')->name('empire.edit');
+});
