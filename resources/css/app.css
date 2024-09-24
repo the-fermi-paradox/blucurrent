@@ -35,7 +35,3 @@ table.table a:hover {
 .fake-button:hover {
     color: #1a202c;
 }
-
-form, input, label, p {
-    color: white !important;
-}

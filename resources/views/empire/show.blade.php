@@ -1,28 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Age of Empires II: Empires List</title>
-    <!-- Font Awesome -->
-    <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        rel="stylesheet"
-    />
-    @vite(['resources/js/app.js', 'resources/css/app.css'])
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
-
-</head>
+<x-head/>
 <body>
+<x-delete-modal :$empire/>
 <section class="vh-100">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -36,7 +16,10 @@
                             <p class="text-black">
                                 {{ DateTime::createFromFormat('Y-m-d',
                                 $empire->release->release_date)->format('F jS, Y') }}</p>
-                            <a href="{{ route('empire.update', ['id' => $empire->id]) }}"><i class="far fa-edit mb-5"></i></a>
+                            <div>
+                            <a href="{{ route('empire.update', ['id' => $empire->id]) }}"><i class="fas fa-fw fa-lg fa-pen-to-square mb-5"></i></a>
+                            <button class="fake-button" type="button" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#modal-{{ $empire->id }}"><i class="fas fa-fw fa-lg fa-trash-can"></i></button>
+                            </div>
                         </div>
                         <div class="col-md-8 d-flex flex-column">
                             <div class="card-body p-4">
