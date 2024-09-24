@@ -1,5 +1,7 @@
 ## Age of Empires II Control Panel
 
+Type `make help` for a list of commands.
+
 ### Deployment (Production)
 To deploy the project to production, follow these steps on a Debian-based Linux distribution:
 1. `sudo apt install git docker docker-compose`

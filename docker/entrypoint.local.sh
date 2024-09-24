@@ -18,5 +18,4 @@ php artisan view:clear
 php artisan route:clear
 
 npm run build
-
 php artisan serve --host 0.0.0.0

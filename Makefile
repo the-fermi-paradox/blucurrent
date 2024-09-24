@@ -53,3 +53,6 @@ migrate: ## Run migration files
 
 migrate-fresh: ## Clear database and run all migrations
 	docker exec ${CONTAINER_PHP} php artisan migrate:fresh
+
+webpack: ## Rebundle web assets
+	docker exec ${CONTAINER_PHP} npm run build
