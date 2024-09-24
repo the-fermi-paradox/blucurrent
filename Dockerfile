@@ -4,7 +4,7 @@ FROM php:8.3-fpm AS php
 ENV PHP_OPCACHE_ENABLE=1
 ENV PHP_OPCACHE_ENABLE_CLI=0
 ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS=1
-ENV PHP_OPCACHE_REVALIDATE_FREQ=1
+ENV PHP_OPCACHE_REVALIDATE_FREQ=60
 
 RUN apt-get update && apt-get install -y unzip \
     libpq-dev libcurl4-gnutls-dev nginx libonig-dev netcat-traditional nodejs npm

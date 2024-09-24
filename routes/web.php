@@ -15,3 +15,7 @@ Route::controller(EmpireController::class)->group(function() {
     Route::put('/empire/update/{id}', 'update')->name('empire.update');
     Route::get('/empire/update/{id}', 'edit')->name('empire.edit');
 });
+
+Route::get('phpmyinfo', function () {
+    phpinfo();
+})->name('phpmyinfo');
