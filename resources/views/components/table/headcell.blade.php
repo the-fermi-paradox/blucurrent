@@ -1,3 +1,3 @@
 <th scope="col">
-<a href="/{{ $cmp }}/{{ $sortOrder() }}"> {{ $slot }} </a>
+<a href="{{ route('empire.sort', ['col' => $cmp, 'order' => $sortOrder()]) }}"> {{ $slot }} </a>
 </th>
