@@ -42,6 +42,6 @@ To deploy the project for development, follow these steps:
 - `GET /empire/create/` : renders a Blade template displaying the create form for a new empire
 - `POST /empire/create/` : creates a new empire based on the form data
 
-### API Routes
+#### API Routes
 - `GET /api/empires` : returns JSON serialization of empires table
 - `GET /api/releases` : returns JSON serialization of releases table
