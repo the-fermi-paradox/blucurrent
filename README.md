@@ -6,8 +6,7 @@ To deploy the project to production, follow these steps on a Debian-based Linux 
 2. `git clone https://github.com/the-fermi-paradox/blucurrent.git`
 3. `cd blucurrent`
 4. download data files `releases.json, empires.json` into `/storage/app/private/`
-5. supply `.env` file; otherwise script will copy `.env.example`
-6. `docker-compose up --build -d`
+5. `make up-prod`
 
 ### Deployment (Development)
 To deploy the project for development, follow these steps on a Debian-based Linux distribution:
@@ -15,8 +14,7 @@ To deploy the project for development, follow these steps on a Debian-based Linu
 2. `git clone https://github.com/the-fermi-paradox/blucurrent.git`
 3. `cd blucurrent`
 4. download data files `releases.json, empires.json` into `/storage/app/private/`
-5. supply `.env` file; otherwise script will copy `.env.local.example`
-6. `docker-compose -f compose-local.yml up --build -d`
+5. 'make up'
 
 ### Features
 #### Web Routes
