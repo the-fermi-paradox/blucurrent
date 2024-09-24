@@ -11,9 +11,15 @@ ps: ## Show containers.
 	@docker ps
 
 build: ## Build all containers for DEV
-	@docker-compose -f compose-local.yml build --no-cache
+	@docker-compose -f compose-local.yml build
 
 build-prod: ## Build all containers for PROD
+	@docker-compose -f compose-prod.yml build
+
+rebuild: ## Hard rebuild for DEV
+	@docker-compose -f compose-local.yml build --no-cache
+
+rebuild-prod: ## Hard rebuild for PROD
 	@docker-compose -f compose-prod.yml build --no-cache
 
 up: ## Start all containers for DEV
