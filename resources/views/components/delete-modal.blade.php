@@ -10,7 +10,7 @@
                 <button type="button" class="btn btn-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Close</button>
                 <form action="{{ route('empire.delete', ['id' => $empire->id]) }}" method="post">
                     @csrf
-                    @method('DELETE');
+                    @method('DELETE')
                     <button type="submit" class="btn btn-primary" data-mdb-ripple-init>Delete</button>
                 </form>
             </div>
