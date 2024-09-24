@@ -22,14 +22,14 @@ To deploy the project for development with docker, follow these steps on a Debia
 To deploy the project for development, follow these steps:
 1. git clone https://github.com/the-fermi-paradox/blucurrent.git
 2. download data files `releases.json, empires.json` into `/storage/app/private/`
-3. composer update
-4. npm install
-5. cp .env.example.local .env
-6. touch database/database.sqlite
-7. php artisan key:generate
-8. php artisan migrate:fresh --seed
-9. npm run build
-10. php artisan serve
+3. `composer update`
+4. `npm install`
+5. `cp .env.example.local .env`
+6. `touch database/database.sqlite`
+7. `php artisan key:generate`
+8. `php artisan migrate:fresh --seed`
+9. `npm run build`
+10. `php artisan serve`
 
 ### Features
 #### Web Routes
