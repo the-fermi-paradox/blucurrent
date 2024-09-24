@@ -16,7 +16,7 @@ To deploy the project for development with docker, follow these steps on a Debia
 1. `sudo apt install git docker docker-compose`
 2. `git clone https://github.com/the-fermi-paradox/blucurrent.git`
 3. download data files `releases.json, empires.json` into `/storage/app/private/`
-4. 'make fresh'
+4. `make fresh`
 
 ### Deployment (Development)
 To deploy the project for development, follow these steps:
