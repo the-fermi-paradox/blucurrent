@@ -15,6 +15,11 @@ class EmpireController extends Controller
         return redirect()->route('empire.list');
     }
 
+    public function show(string $id) : View
+    {
+        $empire = Empire::findOrFail($id);
+        return view('empire.show', ['empire' => $empire]);
+    }
     /**
      * Display a listing of the resource.
      */

@@ -39,13 +39,11 @@ fresh-prod: ## Destroy & recreate all using prod containers.
 	make up-prod
 
 stop: ## Stop all containers
-	@docker-compose -f compose-local.yml stop
 	@docker-compose -f compose-prod.yml stop
 
 restart: stop up ## Restart all containers
 
 destroy: ## Stop all containers and remove them
-	@docker-compose -f compose-local.yml down
 	@docker-compose -f compose-prod.yml down
 
 bash: ## go into PHP container

@@ -129,7 +129,7 @@
                 </div>
                 <input type="text" id="release_id" name="release_id" class="d-none" value="{{ $empire->release->id }}" required/>
                 <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
-                <a href="/" data-mdb-ripple-init type="button" class="btn btn-secondary btn-block mb-4">Cancel</a>
+                <a href="{{ url()->previous() }}" data-mdb-ripple-init type="button" class="btn btn-secondary btn-block mb-4">Cancel</a>
             </form>
         </div>
     </div>

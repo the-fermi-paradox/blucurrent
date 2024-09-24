@@ -71,7 +71,7 @@
                                         <a href="/empire/update/{{ $empire->id }}"><i class="fas fa-fw fa-lg fa-pen-to-square"></i></a>
                                         <button class="fake-button" type="button" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#modal-{{ $empire->id }}"><i class="fas fa-fw fa-lg fa-trash-can"></i></button>
                                     </td>
-                                    <td>{{ $empire->name }}</td>
+                                    <td><a href="{{ route('empire.show', ['id' => $empire->id]) }}">{{ $empire->name }}</a></td>
                                     <td>{{ $empire->release?->name }}</td>
                                     <td>{{ $empire->architecture }}</td>
                                     <td>{{ $empire->continent }}</td>
