@@ -20,7 +20,7 @@ To deploy the project for development with docker, follow these steps on a Debia
 
 ### Deployment (Development)
 To deploy the project for development, follow these steps:
-1. git clone https://github.com/the-fermi-paradox/blucurrent.git
+1. `git clone https://github.com/the-fermi-paradox/blucurrent.git`
 2. download data files `releases.json, empires.json` into `/storage/app/private/`
 3. `composer update`
 4. `npm install`
@@ -33,15 +33,15 @@ To deploy the project for development, follow these steps:
 
 ### Features
 #### Web Routes
-- `GET "/empire"` : renders a Blade template with all available empires
-- `GET "/empire/{id}"` : renders a Blade template displaying the queried empire
-- `GET "/empire/sort/{col?}/{order?}"` : renders a Blade template with all empires sorted by `col` in `order` order
-- `DELETE "/empire/delete/{id}"` : deletes the empire at the id
-- `GET "/empire/update/{id}"` : renders a Blade template displaying the update form for the id
-- `PUT "/empire/update/{id}"` : updates the empire at the id
-- `GET "/empire/create/"` : renders a Blade template displaying the create form for a new empire
-- `POST "/empire/create/"` : creates a new empire based on the form data
+- `GET /empire` : renders a Blade template with all available empires
+- `GET /empire/{id}` : renders a Blade template displaying the queried empire
+- `GET /empire/sort/{col?}/{order?}` : renders a Blade template with all empires sorted by `col` in `order` order
+- `DELETE /empire/delete/{id}` : deletes the empire at the id
+- `GET /empire/update/{id}` : renders a Blade template displaying the update form for the id
+- `PUT /empire/update/{id}` : updates the empire at the id
+- `GET /empire/create/` : renders a Blade template displaying the create form for a new empire
+- `POST /empire/create/` : creates a new empire based on the form data
 
 ### API Routes
-- `GET "/api/empires"` : returns JSON serialization of empires table
-- `GET "/api/releases"` : returns JSON serialization of releases table
+- `GET /api/empires` : returns JSON serialization of empires table
+- `GET /api/releases` : returns JSON serialization of releases table
