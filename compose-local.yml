@@ -8,5 +8,3 @@ services:
       target: php
     working_dir: /var/www
     ports: [ "8000:8000" ]
-    volumes:
-      - .:/var/www/
