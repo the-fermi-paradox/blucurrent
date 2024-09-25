@@ -26,6 +26,12 @@ class EmpireController extends Controller
     public function index(?string $col = 'id', ?string $order = 'asc') : View
     {
         $empires = Empire::with('release')->orderBy($col, $order)->paginate(8);
+        if ($order !== 'asc' && $order !== 'desc') {
+            abort(404);
+        }
+        if (!in_array($col, (new Empire)->cols)) {
+            abort(404);
+        }
         return view('empire.list', ['empires' => $empires, 'col' => $col, 'order' => $order]);
     }
 

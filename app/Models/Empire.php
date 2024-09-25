@@ -16,6 +16,17 @@ class Empire extends Model
         'unique_technologies',
         'unique_buildings',
     ];
+    public array $cols = [
+        'id',
+        'name',
+        'release_id',
+        'architecture',
+        'continent',
+        'focus',
+        'unique_units',
+        'unique_technologies',
+        'unique_buildings',
+    ];
     protected $hidden = ['updated_at', 'created_at'];
     public function release() : BelongsTo {
         return $this->belongsTo(Release::class);
