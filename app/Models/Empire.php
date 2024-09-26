@@ -16,7 +16,7 @@ class Empire extends Model
         'unique_technologies',
         'unique_buildings',
     ];
-    public array $cols = [
+    static public array $cols = [
         'id',
         'name',
         'release_id',

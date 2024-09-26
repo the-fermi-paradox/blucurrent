@@ -28,7 +28,7 @@ class EmpireController extends Controller
         if ($order !== 'asc' && $order !== 'desc') {
             abort(404);
         }
-        if (!in_array($col, (new Empire)->cols)) {
+        if (!in_array($col, Empire::$cols)) {
             abort(404);
         }
         $empires = Empire::with('release')->orderBy($col, $order)->paginate(8);
