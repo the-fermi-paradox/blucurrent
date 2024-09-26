@@ -4,7 +4,6 @@ services:
     database:
         container_name: mysql
         image: mysql:8.0
-        ports: [ "3306:3306" ]
         environment:
             - MYSQL_DATABASE=default
             - MYSQL_USER=laravel
